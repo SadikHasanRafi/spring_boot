@@ -36,4 +36,22 @@ public class ProductServoce {
         
         return getProductById(product.id);
     }
+
+    public Product updateProduct(int id, Product updatedProduct) {
+        Product product = getProductById(id);
+        if(product != null) {
+            product.setName(updatedProduct.getName());
+            product.setPrice(updatedProduct.getPrice());
+        }
+        return product;
+    }
+
+    public String deleteProduct(int id) {
+        if(products.removeIf(product -> product.id == id)){
+            return "Product with id: " + id + " is deleted";
+        } else{
+            return "No product found with id: " + id;
+        }
+
+    }
 }

@@ -3,6 +3,7 @@ package com.rafi.simpleWebApp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.rafi.simpleWebApp.model.Product;
 import com.rafi.simpleWebApp.service.ProductServoce;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 
 
@@ -37,6 +40,17 @@ public class ProductController {
     @PostMapping("/products")
     public Product requestMethodName(@RequestBody Product param) {
         return service.addProduct(param);
+    }
+
+
+    @PutMapping("products/{id}")
+    public Product putMethodName(@PathVariable int id, @RequestBody Product product) {        
+        return service.updateProduct(id,product);
+    }
+
+    @DeleteMapping("/products/{id}")
+    public String deleteProduct(@PathVariable int id){
+        return service.deleteProduct(id);
     }
     
 }
