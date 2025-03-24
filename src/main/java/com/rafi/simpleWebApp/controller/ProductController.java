@@ -14,43 +14,36 @@ import com.rafi.simpleWebApp.model.Product;
 import com.rafi.simpleWebApp.service.ProductServoce;
 import org.springframework.web.bind.annotation.PutMapping;
 
-
-
-
 @RestController
 public class ProductController {
-    
 
-    
     @Autowired
     ProductServoce service;
 
     @RequestMapping("/products")
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts() {
         return service.getAllProducts();
     }
 
     @RequestMapping("/products/{prodId}")
-    public Product getProductById(@PathVariable int prodId){
+    public Product getProductById(@PathVariable int prodId) {
         // Implement logic to get product by id
         return service.getProductById(prodId);
     }
-
 
     @PostMapping("/products")
     public Product requestMethodName(@RequestBody Product param) {
         return service.addProduct(param);
     }
 
-
     @PutMapping("products/{id}")
-    public Product putMethodName(@PathVariable int id, @RequestBody Product product) {        
-        return service.updateProduct(id,product);
+    public Product putMethodName(@PathVariable int id, @RequestBody Product product) {
+        return service.updateProduct(id, product);
     }
 
     @DeleteMapping("/products/{id}")
-    public String deleteProduct(@PathVariable int id){
+    public String deleteProduct(@PathVariable int id) {
         return service.deleteProduct(id);
     }
-    
+
 }
