@@ -3,7 +3,7 @@ package com.rafi.simpleWebApp.model;
 
 
 public class Product {
-    private int id;
+    public int id;
     private String name;
     private int price;
 
