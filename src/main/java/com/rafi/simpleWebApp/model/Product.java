@@ -1,8 +1,16 @@
 package com.rafi.simpleWebApp.model;
 
+import org.springframework.stereotype.Component;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 
+@Component
+@Entity
 public class Product {
+    
+    @Id
     public int id;
     private String name;
     private int price;
