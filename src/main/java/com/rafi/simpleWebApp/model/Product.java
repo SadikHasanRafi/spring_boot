@@ -14,9 +14,24 @@ public class Product {
     public int id;
     private String name;
     private int price;
+    private String category;
+    private boolean inStock;
+    private float rating;
+
+    public float getRating(){
+        return this.rating;
+    }
+
+    public boolean getInStock(){
+        return this.inStock;
+    }
+
+    public String getCategory(){
+        return this.category;
+    }
 
     // Constructor
-    public Product(int id, String name, int price) {
+    public Product(int id, String name, int price, String category, boolean inStock, float ratting) {
         this.id = id;
         this.name = name;
         this.price = price;

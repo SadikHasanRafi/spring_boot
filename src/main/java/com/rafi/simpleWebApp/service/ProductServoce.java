@@ -1,7 +1,5 @@
 package com.rafi.simpleWebApp.service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +14,6 @@ public class ProductServoce {
 
     @Autowired
     ProductRepo repo;
-
-    // List<Product> products = new ArrayList<>(Arrays.asList(
-    //         new Product(110, "iPhone 15", 1200),
-    //         new Product(111, "iPhone 16", 1300),
-    //         new Product(112, "Samsung Galaxy S24", 1100),
-    //         new Product(113, "Google Pixel 8", 1000),
-    //         new Product(114, "OnePlus 12", 900),
-    //         new Product(115, "Xiaomi 14 Pro", 850)));
 
     public List<Product> getAllProducts() {
         return repo.findAll();        
